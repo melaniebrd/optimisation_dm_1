@@ -1,6 +1,12 @@
 # DM Maison numéro 1
 Lien : [http://www-desir.lip6.fr/~durrc/Iut/optim/t/dm1-connect]
 
+## 0. Prerequisites
+
+For the tests :
+nose==1.3.7
+nose-parameterized==0.5.0
+
 ## 1. Comment ça marche ?
 
 Le code est organisé de façon à pouvoir tester facilement deux méthodes différentes de résolution du problème.
@@ -31,6 +37,7 @@ les méthodes implémentées)
 
 Dans cette méthode, chaque tuile est représentée par 4 variables de connection, comme nous pouvons le voir sur le schéma ci-dessous:
 
+```
                 j = 0     j = 1     j = 2
 
 
@@ -51,6 +58,8 @@ i = 2       x17|    | x18|    | x19|    | x20
                 ----      ----      ----  
                  x21       x22       x23
 
+```
+
 Pour une tuile de taille n * n, il y a donc ici 2n(n+1) variables.
 
 ### Code commun aux deux méthodes
@@ -66,9 +75,9 @@ Voici les temps comparatifs de résolution des 9 tuiles présentes dans le
 fichier grid_samples.py
 
 Pour chaque grille, voici le temps en ms que met chacune des deux méthodes à
-trouver la solution.
+calculer la solution.
 
-| Grid |  Method 1 (Orientation) |  Method 2 (Connection) | Best Méthod |
+| Grid |  Method 1 (Orientation) |  Method 2 (Connection) | Best Method |
 |------|-------------------------|------------------------|-------------|
 |   2  |           0.236         |           0.517        |      1      |
 |   3  |           0.364         |           0.964        |      1      |
